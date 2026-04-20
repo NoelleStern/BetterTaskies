@@ -1,0 +1,15 @@
+"light" = [
+    "latte",
+    "light",
+    "retro",
+    "cyberpunk",
+    "valentine",
+]
+
+"dark" = [
+    "catppuccin",
+    "night",
+    "coffee",
+    "abyss",
+    "aqua",
+]

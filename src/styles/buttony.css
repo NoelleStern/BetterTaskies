@@ -1,0 +1,7 @@
+.buttony {
+  transition: transform;
+  transition-duration: 75ms;
+}
+.buttony:active {
+  transform: translate(0px, 2px);
+}

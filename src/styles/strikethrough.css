@@ -1,0 +1,35 @@
+@keyframes strike {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.strike {
+  position: relative;
+}
+.strike::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 3px;
+  border-radius: 1.5px;
+  background: currentColor;
+  animation: strike 200ms linear 100ms 1 normal forwards; 
+}
+
+
+@property --progress {
+  syntax: '<percentage>'; 
+  initial-value: 0%;
+  inherits: false;
+}
+@keyframes strike-multiline {
+  from { --progress: 0%; }
+  to { --progress: 100%; }
+}
+.strike-multiline {
+  background: linear-gradient(currentColor 0 0) no-repeat left / var(--progress,0%) .1em, currentColor;
+  background-clip: border-box, text;
+  transition: background-size .1s ease;
+  animation: strike 200ms linear 100ms 1 normal forwards;
+}

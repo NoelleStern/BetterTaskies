@@ -1,0 +1,147 @@
+@import 'tailwindcss';
+@plugin 'daisyui' {
+  logs: false;
+  themes: all;
+}
+
+
+/* Additional CSS imports */
+@import '@styles/themes.css';
+@import '@styles/fonts.css';
+@import '@styles/squishy.css';
+@import '@styles/buttony.css';
+@import '@styles/root_transition.css';
+@import 'tippy.js/dist/tippy.css';
+
+
+/* Global variables and stuff */
+:root {
+  --gap: calc(var(--spacing) * 1);
+  --md-gap: calc(var(--spacing) * 7);
+  --list-item-padding-h: 1rem;
+  --top-bar-height: calc(var(--spacing) * 15);
+  --top-bar-height-mobile: calc(var(--spacing) * 13);
+
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+  --theme-transition: 350ms;
+
+  --modal-z-index: 1000;
+
+  --sidebar-z-index: 900;
+  --sidebar-backdrop-z-index: 899;
+
+  --list-item-max-w: 64rem;
+}
+
+
+/* I guess this is a good practice */
+/* https://greggod.medium.com/css-do-not-put-height-100-on-the-body-html-e36bda3551b3 */
+html, body {
+  min-height: 100vh;
+}
+/* Tailwind theme color transition without destroying DaisyUI animations */
+@layer base {
+  * {
+    @apply root-transition duration-(--theme-transition);
+  }
+}
+
+/* Header styles */
+/* https://github.com/tailwindlabs/tailwindcss/issues/1460 */
+h1 { @apply text-4xl font-bold; }
+h2 { @apply text-3xl font-bold; }
+h3 { @apply text-2xl font-bold; }
+h4 { @apply text-xl font-semibold; }
+h5 { @apply text-lg font-semibold; }
+h6 { @apply text-sm font-semibold; }
+
+
+/* Border cards */
+.border-card {
+  @apply bg-base-100 rounded-box border-[1px] border-(--color-base-content)/30;
+}
+.border-glass-card {
+  @apply border-[1px] border-(--color-base-content)/30;
+  background: color-mix(in oklab, var(--color-base-100) 80%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+
+/* https://www.reddit.com/r/tailwindcss/comments/1iqephx/hide_scrollbar_tailwind_css_40/ */
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+
+/* Focus outline class */
+.focusable:focus-visible {
+  @apply outline-offset-2;
+  color: inherit;
+  outline-color: var(--color-base-content);
+  outline-width: 2px;
+  outline-style: solid;
+  isolation: isolate;
+  border-radius: inherit;
+}
+
+
+/* Button */
+.button {
+  --button-bg: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+  padding: 0.15rem;
+  border-radius: var(--radius-field);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: var(--button-bg);
+}
+.button:focus:focus-within:focus-visible {
+  @apply outline-offset-2;
+
+  color: inherit;
+  outline-color: var(--color-base-content);
+  outline-width: 2px;
+  outline-style: solid;
+  isolation: isolate;
+  
+  background-color: var(--button-bg);
+}
+
+
+/* Link */
+.hyperlink {
+  outline: none;
+  text-decoration-line: underline;
+}
+.hyperlink:focus:focus-within:focus-visible {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+
+/* Force scroll */
+.force-scroll-y {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.force-scroll-y::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 2px;
+}
+.force-scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.force-scroll-x::-webkit-scrollbar {
+  -webkit-appearance: none;
+  height: 2px;
+}
+.force-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.force-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.6);
+  border-radius: 1px;
+}

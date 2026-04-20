@@ -1,0 +1,20 @@
+.underline-holder {
+  position: relative;
+}
+.underline {
+  opacity: 0.3;
+  height: 0.1rem;
+  background-color: white;
+  transition-property: background-color, opacity, height;
+}
+.underline-holder:focus-within > .underline {
+  opacity: 100%;
+  height: 0.12rem;
+  background-color: var(--color-primary);
+}
+.underline-holder:has(input:user-invalid) > .underline {
+  background-color: var(--color-error);
+}
+input:focus {
+  outline: none;
+}

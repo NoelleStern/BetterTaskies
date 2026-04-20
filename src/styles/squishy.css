@@ -1,0 +1,24 @@
+/* Squishes on press */
+/* The problem is :active kinda sucks on mobile and so I need a workaround */
+/* TODO: find a workaround solution */
+.squishy {
+  --squishy-scale: 80%;
+  transition-timing-function: ease-out;
+  transition-duration: 75ms;
+  transition-property: transform;
+}
+.squishy:active {
+  transform: scale(var(--squishy-scale));
+}
+.squishy-active[data-active] {
+  --squishy-scale: 80%;
+  transition-property: transform;
+  transform: scale(var(--squishy-scale));
+}
+
+
+.stretchy {
+  @apply relative duration-300
+  [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] 
+  active:translate-y-1 active:scale-x-110 active:scale-y-90;
+}
