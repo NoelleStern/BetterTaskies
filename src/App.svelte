@@ -25,6 +25,9 @@ TODO:
   // Elements
   import SidebarElement from './lib/Sidebar/SidebarElement.svelte';
   import SidebarContent from './lib/Sidebar/SidebarContent.svelte';
+
+  // Constants
+  const BASE_URL: string = import.meta.env.BASE_URL.replace(/\/$/, '');
   
   // Do init stuff
   loadFonts(); // Load fonts
@@ -49,7 +52,7 @@ TODO:
   
     {#snippet app()}
       {#if routes}
-        <Router {routes} />
+        <Router basePath={BASE_URL} {routes} />
       {/if}
     {/snippet}
     
