@@ -216,6 +216,7 @@
     @media (pointer:none), (pointer:coarse), (width < 48rem) {
       background: color-mix(in oklab, var(--color-base-100) calc(var(--sidebar-progress) * 5%), transparent);
       backdrop-filter: blur(calc(var(--sidebar-progress) * 1px));
+      opacity: min(var(--sidebar-progress), 0.9);
     }
   }
   
