@@ -6,4 +6,4 @@
 </script>
 
 
-<button type="button" tabindex="-1" class="squishy">{emoji}</button><span class="select-none ps-[0.25rem]">{title}</span>
+<button type="button" tabindex="-1" class="squishy select-none">{emoji}</button><span class="select-none ps-[0.25rem]">{title}</span>

@@ -26,11 +26,11 @@
 
     <!-- Yrellis -->
     <button type="button" tabindex="-1" class="grid { !$mobile ? 'items-center' : '' } shrink-0 h-full squishy">
-      <img alt="Yrellis giggle" draggable="false" class="size-25" src={YrellisGiggle}/>
+      <img alt="Yrellis giggle" draggable="false" class="select-none size-25" src={YrellisGiggle}/>
     </button>
 
     <!-- Cute text -->
-    <div class="relative size-full pointer-events-none">
+    <div class="select-none relative size-full pointer-events-none">
       <div class="absolute ps-2 bottom-0 font-bold">
         {m.drawerTitle().toUpperCase()}
       </div>
