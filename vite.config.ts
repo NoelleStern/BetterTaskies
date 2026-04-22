@@ -25,7 +25,6 @@ export default defineConfig({
     }),
     VitePWA({ 
       registerType: 'autoUpdate',
-      base: "/BetterTaskies/",
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webmanifest}"],
       },
@@ -40,37 +39,37 @@ export default defineConfig({
         theme_color: '#000000',
         icons: [
           {
-            src: '/icons/icon-48.webp',
+            src: '/BetterTaskies/icons/icon-48.webp',
             sizes: '48x48',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-72.webp',
+            src: '/BetterTaskies/icons/icon-72.webp',
             sizes: '72x72',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-96.webp',
+            src: '/BetterTaskies/icons/icon-96.webp',
             sizes: '96x96',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-128.webp',
+            src: '/BetterTaskies/icons/icon-128.webp',
             sizes: '128x128',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-192.webp',
+            src: '/BetterTaskies/icons/icon-192.webp',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-256.webp',
+            src: '/BetterTaskies/icons/icon-256.webp',
             sizes: '256x256',
             type: 'image/png'
           },
           {
-            src: '/icons/icon-512.webp',
+            src: '/BetterTaskies/icons/icon-512.webp',
             sizes: '512x512',
             type: 'image/png'
           }
