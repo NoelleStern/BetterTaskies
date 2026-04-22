@@ -25,6 +25,7 @@ export default defineConfig({
     }),
     VitePWA({ 
       registerType: 'autoUpdate',
+      base: "/BetterTaskies/",
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg,webmanifest}"],
       },
@@ -32,7 +33,7 @@ export default defineConfig({
       manifest: {
         name: 'Better Taskies',
         short_name: 'Better Taskies',
-        start_url: '/',
+        start_url: '/BetterTaskies/',
         display: 'standalone',
         description: 'A simple to do app with your personal Yrellis assistant.',
         background_color: '#ffffff',
