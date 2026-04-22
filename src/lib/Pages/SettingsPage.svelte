@@ -2,9 +2,9 @@
 
   import TimeInput from '../Inputs/TimeInput.svelte';
   import PickSticker from '../Modals/PickSticker.svelte';
-  import ThemeSelect from '../Buttons/ThemeSelect.svelte';
+  import ThemeDropdown from '../Buttons/ThemeDropdown.svelte';
   import SettingsTopBar from '../TopBar/SettingsTopBar.svelte';
-  import LanguageSelect from '../Buttons/LanguageSelect.svelte';
+  import LanguageDropdown from '../Buttons/LanguageDropdown.svelte';
   import FontPickerButton from '../Buttons/FontPickerButton.svelte';
   import FontRemoveButton from '../Buttons/FontRemoveButton.svelte';
 
@@ -62,11 +62,12 @@
   <!-- Top bar -->
   <SettingsTopBar />
 
-  <div class="flex flex-col gap-5 p-5 force-scroll force-scroll-y">
+  <div class="flex flex-col h-full gap-5 p-5 force-scroll force-scroll-y">
 
     <div class="line">
       <div class="text"> {m.language()}: </div>
-      <LanguageSelect />
+      <!-- <LanguageSelect /> -->
+      <LanguageDropdown />
     </div>
 
     <div class="line">
@@ -105,7 +106,7 @@
         <span class="absolute top-0 left-0 theme-text under-text"> {m.theme()} </span>
         <span class="absolute top-0 left-0 theme-text rainbow pe-[2px]"> {m.theme()} </span>
       </div>
-      <ThemeSelect {themes} />
+      <ThemeDropdown {themes} />
     </div>
 
     <div class="select-none flex gap-4 items-center">

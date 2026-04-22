@@ -74,6 +74,7 @@
   const displayNames = new Intl.DisplayNames(locales, { type: 'language' });
   export const languageTags: string[] = locales.map(tag => tag);
   export const languageNames: string[] = locales.map(tag => displayNames.of(tag)!);
+  export const reverseLanguageTags: Map<string, number> = new Map([...languageTags.entries()].map(([k, v]) => [v, k]));
 
   // Theming
   export const themes: Themes = new Themes(themesToml.default.light, themesToml.default.dark);
@@ -93,7 +94,12 @@
   export const taskieCheckHaptics: WritablePersisted<boolean> = writable<PersistedState<boolean>>(new PersistedState('TaskieCheckHaptics', false));
   export const taskieIncreaseHaptics: WritablePersisted<boolean> = writable<PersistedState<boolean>>(new PersistedState('TaskieIncreaseHaptics', true));
 
-  
+
+  export function getFullAppLanguage(): string {
+    return languageNames[reverseLanguageTags.get(get(appLanguage).current) as number];
+  }
+
+
   appLanguage.subscribe(() => {
     const tag: string = get(appLanguage).current;
     document.documentElement.lang = tag; // Update the html tag
