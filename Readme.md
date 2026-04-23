@@ -4,10 +4,12 @@
 
 Yrellis is your friendly and helpful slime girl and she also is a mascot of this app. She believes that if you break any given big task into smaller taskies, you'll see how easy it actually is to achieve.
 
-![Example screenshot](/public/images/screenshots/wide1.png)
+![Example screenshot](/public/images/screenshots/wide1.png) <br>
 [![Svelte](https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white)](https://svelte.dev/)
 [![PWA](https://img.shields.io/badge/pwa-%235a06c9.svg?style=for-the-badge&logo=pwa&logoColor=white)](https://web.dev/explore/progressive-web-apps)
 [![Capacitor](https://img.shields.io/badge/capacitor-%23119eff.svg?style=for-the-badge&logo=capacitor&logoColor=white)](https://capacitorjs.com/)
+[![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![DaisyUI](https://img.shields.io/badge/daisyui-5A0EF8?style=for-the-badge&logo=daisyui&logoColor=white)](https://daisyui.com/)
 [![More Yrellis Art](https://img.shields.io/badge/More_Yrellis_Art-black?logo=x&style=for-the-badge&logoColor=white)](https://x.com/TheRequiell) <br>
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
