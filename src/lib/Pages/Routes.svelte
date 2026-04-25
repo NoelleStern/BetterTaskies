@@ -34,7 +34,7 @@
   }
 
   export function sideGoTo(href: string) {
-    if (matchMedia("(width < 48rem)")) { get(advancedToggle)(false); } // If screen is mobile sized - close the sidebar
+    if (matchMedia("(width < 48rem)").matches) { get(advancedToggle)(false); } // If screen is mobile sized - close the sidebar
     goto(href);
   }
 
