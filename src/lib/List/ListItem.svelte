@@ -38,7 +38,6 @@
   }
 
   function itemHaptics(check: boolean) {
-    if (!$mobile) { return; }
     if (check) { if ($taskieCheckHaptics.current) { haptics(); } }
     else { if ($taskieIncreaseHaptics.current) { haptics(); } }
   }

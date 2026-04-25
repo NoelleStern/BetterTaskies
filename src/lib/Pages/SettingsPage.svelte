@@ -8,6 +8,7 @@
   import FontPickerButton from '../Buttons/FontPickerButton.svelte';
   import FontRemoveButton from '../Buttons/FontRemoveButton.svelte';
 
+  import { WebHaptics } from 'web-haptics';
   import type A11yDialog from 'a11y-dialog';
   import { m } from '../../paraglide/messages';
   import { mobile } from '../Stores/CapacitorStore.svelte';
@@ -88,7 +89,7 @@
       </div>
     {/if}
 
-    {#if $mobile}
+    {#if $mobile || WebHaptics.isSupported}
       <div class="line">
         <div class="text"> {m.checkHaptics()}: </div>
         <input class="toggle toggle-lg toggle-primary" type="checkbox" bind:checked={$taskieCheckHaptics.current} />

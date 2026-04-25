@@ -1,7 +1,6 @@
 <script module lang="ts">
 
   import { get } from 'svelte/store';
-  import { isMobile } from '../Stores/CapacitorStore.svelte';
   import { advancedToggle } from '../Sidebar/SidebarStore.svelte';
   import { goto as basicGoto, type RouteConfig } from '@mateothegreat/svelte5-router';
 
@@ -35,7 +34,7 @@
   }
 
   export function sideGoTo(href: string) {
-    if (isMobile()) { get(advancedToggle)(false); }
+    if (matchMedia("(width < 48rem)")) { get(advancedToggle)(false); } // If screen is mobile sized - close the sidebar
     goto(href);
   }
 
