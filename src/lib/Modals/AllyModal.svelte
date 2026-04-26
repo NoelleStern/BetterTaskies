@@ -104,7 +104,7 @@
     <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog"></button> -->
 
     <!-- 5. The dialog title -->
-    <h2 use:fitText class="text-secondary font-bold select-none">{title}</h2>
+    <h2 use:fitText class="text-base-content/85 font-bold select-none">{title}</h2>
 
     <!-- 6. Dialog content -->
     {@render content()}

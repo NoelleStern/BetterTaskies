@@ -12,7 +12,7 @@
 
 
 <div class="sticky max-md:top-0 md:-top-(--md-gap) h-8.5 text-lg z-1" data-list-member>
-  <div class="relative flex items-center size-full font-bold bg-secondary px-2 rounded-lg z-1 mdc-elevation--z1">
+  <div class="relative flex items-center size-full font-bold text-secondary-content bg-secondary px-2 rounded-lg z-1 mdc-elevation--z1">
 
     <span class="select-none grow">
       {`${category.name}:`}
