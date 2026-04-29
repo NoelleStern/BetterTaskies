@@ -11,6 +11,7 @@ TODO:
 
   // Init stores and libs
   import 'dexie';
+  import './lib/Stores/MobileDetect.svelte';
   import './lib/Stores/SettingsStore.svelte';
   import './lib/Stores/CapacitorStore.svelte';
 

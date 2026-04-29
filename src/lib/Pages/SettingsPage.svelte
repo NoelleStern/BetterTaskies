@@ -13,6 +13,7 @@
   import { m } from '../../paraglide/messages';
   import { mobile } from '../Stores/CapacitorStore.svelte';
   import { customEmojiFont } from '../Stores/FontStore.svelte';
+  import { mobileDetected } from '../Stores/MobileDetect.svelte';
   import {
     resetTime, dailyTime, persistentNotifications, themes, dailyNotifications,
     yrellisTodoIcon, yrellisDoneIcon, taskieCheckHaptics, taskieIncreaseHaptics
@@ -89,7 +90,7 @@
       </div>
     {/if}
 
-    {#if $mobile || WebHaptics.isSupported}
+    {#if $mobile || ($mobileDetected && WebHaptics.isSupported)}
       <div class="line">
         <div class="text"> {m.checkHaptics()}: </div>
         <input class="toggle toggle-lg toggle-primary" type="checkbox" bind:checked={$taskieCheckHaptics.current} />
