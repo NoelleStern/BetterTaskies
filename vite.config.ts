@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { ViteToml } from 'vite-plugin-toml';
+import { writeFileSync, readFileSync } from 'fs';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { paraglideVitePlugin } from '@inlang/paraglide-js';
 
@@ -94,6 +95,18 @@ export default defineConfig({
         ],
       }
     }),
+    // A simple lil plugin to make Github Pages work with the router correctly
+    {
+      name: 'copy-index-to-404',
+      closeBundle() {
+        const distDir: string = 'dist';
+        const indexPath: string = resolve(distDir, 'index.html');
+        const notFoundPath: string = resolve(distDir, '404.html');
+
+        const html: string = readFileSync(indexPath, 'utf-8');
+        writeFileSync(notFoundPath, html);
+      }
+    }
   ],
   resolve: {
     alias: [
