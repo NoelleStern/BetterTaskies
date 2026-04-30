@@ -10,7 +10,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/BetterTaskies/",
+  base: '/BetterTaskies/',
   plugins: [
     tailwindcss(),
     svelte(), // <-- Must come after Tailwind
@@ -26,7 +26,7 @@ export default defineConfig({
     VitePWA({ 
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,webmanifest}"],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
       },
       // Generates 'manifest.webmanifest' file on build
       manifest: {
@@ -74,22 +74,22 @@ export default defineConfig({
             type: 'image/png'
           }
         ],
-        "screenshots": [
+        'screenshots': [
           // Mobile
           {
-            "src": "images/screenshots/narrow1.png",
-            "sizes": "1080x2300",
-            "type": "image/png",
-            "form_factor": "narrow",
-            "label": "Daily Taskies"
+            'src': 'images/screenshots/narrow1.png',
+            'sizes': '1080x2300',
+            'type': 'image/png',
+            'form_factor': 'narrow',
+            'label': 'Daily Taskies'
           },
           // Desktop
           {
-            "src": "images/screenshots/wide1.png",
-            "sizes": "1920x1080",
-            "type": "image/png",
-            "form_factor": "wide",
-            "label": "Daily Taskies"
+            'src': 'images/screenshots/wide1.png',
+            'sizes': '1920x1080',
+            'type': 'image/png',
+            'form_factor': 'wide',
+            'label': 'Daily Taskies'
           },
         ],
       }
