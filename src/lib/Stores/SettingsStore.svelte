@@ -104,6 +104,10 @@
     const tag: string = get(appLanguage).current;
     document.documentElement.lang = tag; // Update the html tag
     setLocale(tag as Locale); // Update the paraglide
+    
+    // Re-schedule daily so that it's in a new language
+    cancelDailyNotification();
+    scheduleDailyNotification();
   });
 
   isLightTheme.subscribe(() => {
