@@ -9,6 +9,10 @@
   import { getMonth, getWeek } from 'date-fns';
   import { lastResetDate, resetTime, type HourMinuteTime } from './SettingsStore.svelte';
 
+  
+  // Reset the timer on reset time update
+  resetTime.subscribe(() => { startResetTimer(); });
+
 
   export class ResetDate {
     // Time here is a verb :>
