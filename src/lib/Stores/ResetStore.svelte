@@ -9,10 +9,6 @@
   import { getMonth, getWeek } from 'date-fns';
   import { lastResetDate, resetTime, type HourMinuteTime } from './SettingsStore.svelte';
 
-  
-  // Reset the timer on reset time update
-  resetTime.subscribe(() => { startResetTimer(); });
-
 
   export class ResetDate {
     // Time here is a verb :>
@@ -102,5 +98,13 @@
     // Check if it actually is future and set to tomorrow if not
     timer(futureFlag ? potentialFuture : ResetDate.tomorrow(time));
   }
+
+
+  // Reset the timer on reset time update
+  let resetFlag: boolean = false; // So that we can ignore the first trigger
+  resetTime.subscribe(() => { 
+    if (resetFlag) { startResetTimer(); } else { resetFlag = true; }
+  });
+
 
 </script>
