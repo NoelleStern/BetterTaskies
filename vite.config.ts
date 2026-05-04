@@ -27,6 +27,7 @@ export default defineConfig({
     VitePWA({ 
       registerType: 'autoUpdate',
       workbox: {
+        maximumFileSizeToCacheInBytes: 1 * 1024 * 1024, // 1 MB
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
       },
       // Generates 'manifest.webmanifest' file on build
