@@ -21,7 +21,6 @@
 </script>
 
 
-<!-- TODO: add disabled styling -->
 <div class="relative">
 
   <!-- Visible "fake" input -->
