@@ -57,13 +57,13 @@
 </style>
 
 
-<AllyModal title={m.pickStickerHeader()} bind:dialog>
+<AllyModal title={m.pickStickerHeader()} halfPadding bind:dialog>
   {#snippet content()}
     <form class="flex flex-col grow gap-3 text-xl overflow-hidden p-1" bind:this={form}>
 
       <div class="h-0"></div>
 
-      <div tabindex="-1" class="w-full grid-container grid gap-x-5 gap-y-2 force-scroll force-scroll-y">
+      <div tabindex="-1" class="w-full grid-container grid gap-x-5 gap-y-2 force-scroll force-scroll-y p-2 md:p-3">
         {#each YrellisIntersection.all as [_name, combined]}
           <button
             type="button"

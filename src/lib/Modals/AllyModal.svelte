@@ -17,13 +17,14 @@
   import { onMount, type Snippet } from 'svelte';
   import { fitText } from '../Utils/FitText.svelte';
 
-  interface Props { 
+  interface Props {
     title: string
     rootElement?: A11yDialogElement
     dialog?: A11yDialog
     content: Snippet
     quitOnOverlayClick?: boolean
     id?: YrellisModal
+    halfPadding?: boolean,
   };
   let { 
     title,
@@ -31,7 +32,8 @@
     dialog = $bindable(),
     content,
     quitOnOverlayClick = true,
-    id
+    id,
+    halfPadding = false
   }: Props = $props();
 
   onMount(() => {
@@ -98,7 +100,7 @@
   <div class="dialog-overlay bg-black/50" data-a11y-dialog-hide={quitOnOverlayClick ? '' : null}></div>
 
   <!-- 3. The actual dialog -->
-  <div class="dialog-content flex flex-col justify-center border-card text-inherit w-full max-w-[min(90%,570px)] max-h-[90%] lg:min-h-32 p-4 md:p-6" role="document">
+  <div class="dialog-content flex flex-col justify-center border-card text-inherit w-full max-w-[min(90%,570px)] max-h-[90%] lg:min-h-32 { halfPadding ? 'p-2 md:p-3' : 'p-4 md:p-6' }" role="document">
 
     <!-- 4. The close button -->
     <!-- <button type="button" data-a11y-dialog-hide aria-label="Close dialog"></button> -->

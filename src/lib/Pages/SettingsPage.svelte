@@ -139,7 +139,7 @@
     </div> -->
 
     <!-- Dialogs -->
-    <PickSticker bind:dialog={todoDialog} bind:yrellis={$yrellisTodoIcon} />
+    <PickSticker bind:dialog={todoDialog} bind:yrellis={$yrellisTodoIcon}/>
     <PickSticker bind:dialog={doneDialog} bind:yrellis={$yrellisDoneIcon}/>
 
   </div>
