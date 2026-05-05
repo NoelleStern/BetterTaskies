@@ -26,7 +26,7 @@
   <!-- Visible "fake" input -->
   <button 
     {disabled} 
-    class="input pointer-events-none p-0 disabled:border-base-content/15"
+    class="input input-primary pointer-events-none p-0 disabled:border-base-content/15"
   >
     <div class="flex justify-center"> 
 
